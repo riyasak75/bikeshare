@@ -1,9 +1,16 @@
 import sys
+import os
+import pytest
+import logging
 from pathlib import Path
+print("system path prints here>>>>>>>>>>>>>" ,sys.path)
+# add the parent directory to the system path
+# to import the bikeshare_model module
+# This is necessary to run the tests from the root directory of the project
 file = Path(__file__).resolve()
 parent, root = file.parent, file.parents[1]
 sys.path.append(str(root))
-
+print("this is a message>>>>" , root)
 import pytest
 from sklearn.model_selection import train_test_split
 
